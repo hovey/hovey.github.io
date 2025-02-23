@@ -2,6 +2,7 @@
 
 body {
     font-family: sans-serif;
+    line-height: 2; /* double spacing */
     /* max-width: 800px; */
     /* background-color: white; */
 }
