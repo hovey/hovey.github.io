@@ -1,0 +1,52 @@
+Abstract Guidelines:
+
+https://mhsrs.health.mil/MHSRS/about/abstractguidelines
+
+Abstract Title: Limit of 130 characters (includes spacing)
+
+Abstract Length: Limit of 2,500 characters (includes spacing)
+
+Abstract Disclaimer: Limit of 700 characters (includes spacing)
+
+Learing Objectives: Three (3) are required.  These should answer the question - What do you expect the attendee to be able to do at the end of the session?  Each learning objective should start with an action verb (e.g., Describe, Analyze, Discuss, etc).  Each learning objective has a limit of 250 characters (includes spacing).
+
+Research abstracts should include data and conclusions formatted as: Introduction, Materials and Methods, Results, Conclusions.
+
+Abstract Deadline: 31 March 2026
+
+Breakout Session:  Military Injury Biomechanics & Applications to Warfighter Injury Prevention
+
+Disclaimer: The views and opinions of expressed in this abstract are those of the authors and do not necessarily reflect the official policy or position of their employers or sponsors.
+
+Title: Towards a Fully Automated Workflow for Subject-Specific Human Digital Twins with Clinical Brain Strain Validation
+
+Anu Tripathi (1)
+Michael Buche (3)
+Rika Wright Carlsen (1)
+Emma Lejeune (2)
+Chad B. Hovey (3)
+
+(1) Department of Engineering, Robert Morris University, Pittsburgh, PA
+(2) Department of Mechanical Engineering, Boston University, Boston, MA
+(3) Sandia National Laboratories, Albuquerque, NM
+
+Introduction
+
+
+Materials and Methods
+
+
+
+Results
+
+
+Conclusiosn
+
+
+
+Learning Objectives
+
+- Analyze the accuracy of the autotwin workflow by comparing simulation of brain strain to clinically validated tagged MRI data.
+- Discuss how cliniclly validated, subject-specific digital twins may help the design and testing of military personal protective equipment
+- Highlight the limitations and opportunities for digital twin models to predict brain strain in higher strain regiemes, where clinical human testing data is unavailable
+
