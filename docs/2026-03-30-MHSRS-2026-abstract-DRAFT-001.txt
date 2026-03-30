@@ -56,9 +56,9 @@ CONCLUSIONS
 
 We demonstrate the ability of the autotwin workflow to accurately predict *in vivo* brain deformation across a diverse and large population.  The validated HDTs provide confidence in the workflow's predictive capability.  This validated workflow can be used to assess blast and impact threats encountered by military personnel.  The automation aspect makes the integration of personalized injury risk assessment into the design process for next-generation personal protective equipment viable.
 
-The BBIR dataset is limited to subconcussive, non-injurious head impacts since it derived from human volunteer testing.  Accordingly, the conclusions reached in this study are limited to the same subset of possible head motion environments.  Nonetheless, a milestone toward the development of human digital twin workflow that is automated and validated has been achieved.  Moreover, the framework now exists to generate digital twin models to predict brain deformation in higher strain regimes, where clinical human testing is unavailable.
+The BBIR dataset is limited to subconcussive, non-injurious head impacts since it was derived from human volunteer testing.  Accordingly, the conclusions reached in this study are limited to the same subset of possible head motion environments.  Nonetheless, a milestone toward the development of human digital twin workflow that is automated and validated has been achieved.  Moreover, the framework now exists to generate digital twin models to predict brain deformation in higher strain regimes, where clinical human testing is unavailable.
 
-Learning Objectives
+LEARNING OBJECTIVES
 
 - Analyze the accuracy of the autotwin workflow by comparing simulation of brain strain to clinically validated tagged MRI data.
 - Discuss how clinically validated, subject-specific digital twins may help the design and testing of military personal protective equipment
