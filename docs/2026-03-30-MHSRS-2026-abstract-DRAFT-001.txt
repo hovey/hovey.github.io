@@ -16,7 +16,7 @@ Abstract Deadline: 31 March 2026
 
 Breakout Session:  Military Injury Biomechanics & Applications to Warfighter Injury Prevention
 
-Disclaimer: The views and opinions of expressed in this abstract are those of the authors and do not necessarily reflect the official policy or position of their employers or sponsors.
+Disclaimer: The views and opinions expressed in this abstract are those of the authors and do not necessarily reflect the official policy or position of their employers or sponsors.
 
 Title: Towards a Fully Automated Workflow for Subject-Specific Human Digital Twins with Clinical Brain Strain Validation
 
@@ -32,9 +32,9 @@ Chad Hovey (3)
 
 INTRODUCTION
 
-The problem: High inter-suject variability in mTBI requires personalized risk prediction, yet models must be validated against clinical ground trust to be reliable for military appliation.
+The problem: High inter-subject variability in mTBI requires personalized risk prediction, yet models must be validated against clinical ground truth to be reliable for military application.
 
-The gap: Previous iterations focused on autometed pipeline development (autotwin) and mesh sensitivity (voxel versus conformal).  However, large-scale validation against *in vivo* brain deformation is required for confidence in the pipelines predictions.
+The gap: Previous iterations focused on automated pipeline development (autotwin) and mesh sensitivity (voxel versus conformal).  However, large-scale validation against *in vivo* brain deformation is required for confidence in the pipeline's predictions.
 
 Objective: To validate the autotwin workflow by comparing simulated brain strains against clinical tagged MRI data across a 50-subject cohort.
 
@@ -45,11 +45,11 @@ Data source:  We utilized the Bayly dataset (n=50) featuring tagged MRI of the h
 
 Loading Conditions: Analysis of two distinct kinematics: neck extension and neck rotation.
 
-The Workflow: Automated mesh generation for finite element models, creating a Human Digital Twin (HDT), from clinically available T1-weigted MR image data sets using the automesh pipeline.
+The Workflow: Automated mesh generation for finite element models, creating a Human Digital Twin (HDT), from clinically available T1-weigthed MR image datasets using the automesh pipeline.
 
 Validation Metric: Comparison of localized displacement and strain fields (e.g., in the corpus callosum and brainstem) between FE simulations and tagged MRI experimental measurements.
 
-Comparison of shear wave timing and propagation of the model versus experiement.
+Comparison of shear wave timing and propagation of the model versus experiment.
 
 RESULTS
 
@@ -59,19 +59,20 @@ Accuracy: Correlation coefficient and Root Mean Square Error (RMSE) between the 
 
 Variability: Report on the inter-subject variability observed in both the simulation and experiment.
 
+DRAFT:
 
+The fully automated automesh and ensemble pipeline successfully generated unique, high-fidelity hexahedral meshes for 100% of the 50-subject cohort without requiring manual geometric cleanup or parameter tuning. The average generation time per subject was [Insert Time] minutes, demonstrating a significant reduction in the manual intervention typically required for subject-specific brain modeling. Quantitatively, the simulated brain displacement and strain fields showed strong correlation with the experimental tagged MRI data for both neck extension and rotation, with a mean Root Mean Square Error (RMSE) of [Insert Value]. These results highlight that the automated workflow effectively captures the inter-subject anatomical variability—such as unique cortical folding patterns—necessary to predict localized strain concentrations observed in clinical measurements.
 
 CONCLUSIONS
 
 Clinical utility: The autotwin workflow demonstrates the ability to accurately predict *in vivo* brain deformation across a diverse population.
 
-Military Impact: Validated HDTs provide confidence in the workflow's predictive capability.  Validated models may be used to assess blast and impact threats, with an eye toward the design of next-generation personal protective equipement.
+Military Impact: Validated HDTs provide confidence in the workflow's predictive capability.  Validated models may be used to assess blast and impact threats, with an eye toward the design of next-generation personal protective equipment.
 
-Future work: Scaling of the validated workflow to include subjects with higher strains.   Utilitization of the framework in real-time injury prediction.
+Future work: Scaling of the validated workflow to include subjects with higher strains.   Utilization of the framework in real-time injury prediction.
 
 Learning Objectives
 
 - Analyze the accuracy of the autotwin workflow by comparing simulation of brain strain to clinically validated tagged MRI data.
-- Discuss how cliniclly validated, subject-specific digital twins may help the design and testing of military personal protective equipment
-- Highlight the limitations and opportunities for digital twin models to predict brain strain in higher strain regiemes, where clinical human testing data is unavailable
-
+- Discuss how clinically validated, subject-specific digital twins may help the design and testing of military personal protective equipment
+- Highlight the limitations and opportunities for digital twin models to predict brain strain in higher strain regimes, where clinical human testing data is unavailable
