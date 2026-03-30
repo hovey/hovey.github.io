@@ -1,0 +1,43 @@
+Towards a Fully Automated Workflow for Subject-Specific Human Digital Twins for Traumatic Brain Injury Risk Assessment
+ 
+1. Introduction
+
+Large inter-subject variability in the types and severity of traumatic brain injury (TBI) calls for personalized injury prediction. Thus, the computational models used for injury risk prediction need to capture the unique subject-specific anatomy of the head. The complex anatomy of the brain and currently available tools makes model generation directly from medical images a time-consuming process requiring extensive manual intervention and multiple steps. Some workflows, such as mesh-morphing, have been proposed for faster model generation. However, these workflows have limitations in terms of mesh quality and correlation between the mesh and patient medical scans.
+
+The lack of availability of fully-automated workflows to generate high quality subject-specific finite element (FE) mesh head models directly from medical images has prevented patient-specific TBI assessment. This study aims to demonstrate a fully-automated subject-specific FE modeling workflow from magnetic resonance imaging (MRIs) scans, enabling the automatic creation of human digital twins (HDT). The minimum amount of anatomical details required in the model to capture the underlying mechanism of TBI and optimize the simulation time will also be explored. These HDTs can be used to assess the risk of TBI for military operational tasks and to inform the design of protective equipment.
+ 
+2. Methods
+
+This study demonstrates an automated pipeline for subject-specific FE head model generation from medical images, such as MRI. This section describes the steps involved in the model generation and validation, and also explores the requirement on the level of anatomical detail to be modeled for accurate injury prediction. 
+
+2.1 Datasets
+
+In our study, we initially leverage two open access repositories of human head MRIs, namely IXI and SCI datasets, to test the efficacy of our approach. In brief, the IXI dataset contains nearly 600 MRI from normal and healthy subjects while the SCI head model contains data from a single subject with accompanying ground truth segmentation information. In this initial study, we use only the T1-weighted images from these datasets. Notably, these data are collected across multiple site locations and thus provide a realistic picture of the image acquisition variability that will be encountered by the final version of the pipeline. 
+ 
+2.2 Automated segmentation
+
+The first component of our workflow is automated segmentation where the input is a T1-weighted MRI and the output is a set of isosurfaces that delineate brain and skull regions. In brief, this workflow is implemented via novel functions that leverage open source Python packages including alphashape, numpy, scipy, shapely, scikit-image, and stl. Notably, our goal is to create software that is fully automated, and thus relies on no manual parameter tuning or human intervention to run. In addition to establishing the inputs to the next step of the automated workflow, our automated segmentation approach also provides access to quantitative descriptions of subject-specific geometry.
+
+2.3 Automated meshing and model evaluation
+
+The output of the automated segmentation, a set of isosurfaces that describe boundaries of the head and brain anatomy, becomes the input to the next step: automated meshing. Sculpt, a mesh generation application developed by Sandia National Laboratories, uses the isosurface to create, in a fully automated and parallel manner, a high-quality, fully-automated hexahedral finite element mesh. This mesh output, which numerically describes the complex geometry of the anatomy that composes the head, allows for high-fidelity, personalized injury assessments to be made using FE analysis.
+
+2.4. Requirements on the FE model (Level of detail)
+
+To explore the level of anatomical details required to capture the TBI mechanism and optimize the simulation time, subject-specific models are created using an existing workflow (as presented in MHSRS 2022). First, the effects of accurately modeling the cortical folds are analyzed by comparing the injury metrics from a model with cerebral folds and a model without folds (i.e., smooth cerebrum). Many existing studies rely on models with smooth cerebrum due to the complexity of meshing cortical folds. Then, the effects of inter-subject variation in the brain folds are assessed through FE simulations of 22 subjects (11 males, 11 females), which are scaled to the same size. A half-sinusoidal head rotation acceleration representative of a concussive event (peak acceleration = 10 krad/s2, peak velocity = 60 rad/s), is applied to the skull at the head center of mass in the axial plane, to obtain the injury metrics such as strains and strain rates.
+
+3. Results
+
+We are working towards developing a fully-automated workflow for subject-specific FE head model generation. The current efforts are directed at developing and demonstrating the workflow first for a simplified head model. The level of anatomical details will then be improved in future iterations of the workflow.
+
+We created an open-source code repository, named Autotwin, hosted on GitHub, one of the world’s largest and most popular way to collaboratively build software (https://github.com/autotwin). The repository provides automated version control, which allows for the quality pedigree of the code to be always improving through automated testing and deployment of the Autotwin software.
+
+The repository has three main sub-components: the image-to-isosurface workflow, the isosurface-to-mesh workflow, and the anonymized MR/CT patient scans data. The repository is authored in Python, a modern and ubiquitous programming language that is easy-to-use and effective at integrating multiple sub-process applications together into an automated workflow.From the digital human twins created from the MR/CT data, we performed numerical experiments on heads, with input conditions known to cause mTBI. We have assessed the appropriate level of details, such as cortical folds, to be included in a head model using 22 subject-specific FE head models. The inclusion of cortical folds and the detailed geometry of the folds have a significant effect on the peak magnitude and spatial distribution of brain strain and strain rate. The peak strains in the cortical-folds model occur at the outer surface of the cortical gray matter whereas in the smooth cerebrum model, the peak strain in the brain tissue occur at the interface with the ventricles. The time to reach the peak-strain magnitudes was higher with the smooth cerebrum model, corresponding to the time taken by the shear wave to travel from the brain surface to the ventricles. Comparison of models with cortical folds for the 22 subjects shows high variability in the magnitude of the peak strain (24%) and peak strain rates (25%). The specific gyri of the cerebral cortex where the peak strain occurred also varies between models. These results highlight the importance of accurately modeling the subject-specific cortical folds in an HDT to predict the location of injury. Our automated workflow aims to capture these anatomical details.
+
+4. Conclusions
+
+This study extends our previously developed semi-automated workflow (MHSRS 2022) to a fully-automated workflow to create truly subject-specific high-quality FE models directly from the medical images. This lays the ground work for high-fidelity real-time personalized TBI risk assessment for military operations. Furthermore, these models can be used to predict the risk of TBI for a wide range of blunt impact and blast loading conditions, allowing new targeted approaches to be developed to reduce the risk of injury to the warfighter.
+
+- Demonstrate an automated workflow for subject specific finite element head modeling from medical images for military TBI assessment
+- Discuss the sensitivity of inter-subject anatomical variations in TBI assessment
+- Highlight the current challenges of fully automating human digital twin generation and real time injury prediction
