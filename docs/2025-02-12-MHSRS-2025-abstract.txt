@@ -16,7 +16,7 @@ Military Injury Biomechanics and Prevention for Military Application.
 
 Topic Area: Injury Prevention.
 
-Session Description: Abstracts should address: 1) Vehicle crashworthiness, injury trends, and injury biomechanics of mounted occupants; (2) Injury biomechanics of the head, neck, and spine during military operational tasks; (3) Injury biomechanics and tolerances for military personnel protective equipment (e.g., helmet and body armor); or (4) Mechanisms and biomechanics of injury for Service Members
+Session Description: Abstracts should address: (1) Vehicle crashworthiness, injury trends, and injury biomechanics of mounted occupants; (2) Injury biomechanics of the head, neck, and spine during military operational tasks; (3) Injury biomechanics and tolerances for military personnel protective equipment (e.g., helmet and body armor); or (4) Mechanisms and biomechanics of injury for Service Members
 
 Breakout Session: Computational Modeling of Human Lethality, Injury, and Impairment from Blast Threats in All Environments
 
@@ -54,5 +54,4 @@ Learning Objectives
 
 - Demonstrate an automated workflow for personalized finite element head modeling from medical images for military mTBI assessment
 - Highlight the current challenges of fully automating human head digital twin generation for accurate mTBI assessment
-- Discuss the effect of finite element model meshing techniques on the mTBI risk 
-
+- Discuss the effect of finite element model meshing techniques on the mTBI risk

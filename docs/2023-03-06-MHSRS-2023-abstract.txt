@@ -1,5 +1,5 @@
 Towards a Fully Automated Workflow for Subject-Specific Human Digital Twins for Traumatic Brain Injury Risk Assessment
- 
+
 1. Introduction
 
 Large inter-subject variability in the types and severity of traumatic brain injury (TBI) calls for personalized injury prediction. Thus, the computational models used for injury risk prediction need to capture the unique subject-specific anatomy of the head. The complex anatomy of the brain and currently available tools makes model generation directly from medical images a time-consuming process requiring extensive manual intervention and multiple steps. Some workflows, such as mesh-morphing, have been proposed for faster model generation. However, these workflows have limitations in terms of mesh quality and correlation between the mesh and patient medical scans.
@@ -8,12 +8,12 @@ The lack of availability of fully-automated workflows to generate high quality s
  
 2. Methods
 
-This study demonstrates an automated pipeline for subject-specific FE head model generation from medical images, such as MRI. This section describes the steps involved in the model generation and validation, and also explores the requirement on the level of anatomical detail to be modeled for accurate injury prediction. 
+This study demonstrates an automated pipeline for subject-specific FE head model generation from medical images, such as MRI. This section describes the steps involved in the model generation and validation, and also explores the requirement on the level of anatomical detail to be modeled for accurate injury prediction.
 
 2.1 Datasets
 
-In our study, we initially leverage two open access repositories of human head MRIs, namely IXI and SCI datasets, to test the efficacy of our approach. In brief, the IXI dataset contains nearly 600 MRI from normal and healthy subjects while the SCI head model contains data from a single subject with accompanying ground truth segmentation information. In this initial study, we use only the T1-weighted images from these datasets. Notably, these data are collected across multiple site locations and thus provide a realistic picture of the image acquisition variability that will be encountered by the final version of the pipeline. 
- 
+In our study, we initially leverage two open access repositories of human head MRIs, namely IXI and SCI datasets, to test the efficacy of our approach. In brief, the IXI dataset contains nearly 600 MRI from normal and healthy subjects while the SCI head model contains data from a single subject with accompanying ground truth segmentation information. In this initial study, we use only the T1-weighted images from these datasets. Notably, these data are collected across multiple site locations and thus provide a realistic picture of the image acquisition variability that will be encountered by the final version of the pipeline.
+
 2.2 Automated segmentation
 
 The first component of our workflow is automated segmentation where the input is a T1-weighted MRI and the output is a set of isosurfaces that delineate brain and skull regions. In brief, this workflow is implemented via novel functions that leverage open source Python packages including alphashape, numpy, scipy, shapely, scikit-image, and stl. Notably, our goal is to create software that is fully automated, and thus relies on no manual parameter tuning or human intervention to run. In addition to establishing the inputs to the next step of the automated workflow, our automated segmentation approach also provides access to quantitative descriptions of subject-specific geometry.
@@ -32,9 +32,11 @@ We are working towards developing a fully-automated workflow for subject-specifi
 
 We created an open-source code repository, named Autotwin, hosted on GitHub, one of the world’s largest and most popular ways to collaboratively build software (https://github.com/autotwin). The repository provides automated version control, which allows for the quality pedigree of the code to be always improving through automated testing and deployment of the Autotwin software.
 
-The repository has three main sub-components: the image-to-isosurface workflow, the isosurface-to-mesh workflow, and the anonymized MR/CT patient scans data. The repository is authored in Python, a modern and ubiquitous programming language that is easy-to-use and effective at integrating multiple sub-process applications together into an automated workflow.  
+The repository has three main sub-components: the image-to-isosurface workflow, the isosurface-to-mesh workflow, and the anonymized MR/CT patient scans data. The repository is authored in Python, a modern and ubiquitous programming language that is easy-to-use and effective at integrating multiple sub-process applications together into an automated workflow.
 
-From the digital human twins created from the MR/CT data, we performed numerical experiments on heads, with input conditions known to cause mTBI. We have assessed the appropriate level of details, such as cortical folds, to be included in a head model using 22 subject-specific FE head models. The inclusion of cortical folds and the detailed geometry of the folds have a significant effect on the peak magnitude and spatial distribution of brain strain and strain rate. The peak strains in the cortical-folds model occur at the outer surface of the cortical gray matter whereas in the smooth cerebrum model, the peak strains in the brain tissue occur at the interface with the ventricles. The time to reach the peak-strain magnitudes was higher with the smooth cerebrum model, corresponding to the time taken by the shear wave to travel from the brain surface to the ventricles. Comparison of models with cortical folds for the 22 subjects shows high variability in the magnitude of the peak strain (24%) and peak strain rates (25%). The specific gyri of the cerebral cortex where the peak strain occurred also varies between models. These results highlight the importance of accurately modeling the subject-specific cortical folds in an HDT to predict the location of injury. Our automated workflow aims to capture these anatomical details.
+From the digital human twins created from the MR/CT data, we performed numerical experiments on heads, with input conditions known to cause mTBI. We have assessed the appropriate level of details, such as cortical folds, to be included in a head model using 22 subject-specific FE head models. The inclusion of cortical folds and the detailed geometry of the folds have a significant effect on the peak magnitude and spatial distribution of brain strain and strain rate. 
+
+The peak strains in the cortical-folds model occur at the outer surface of the cortical gray matter whereas in the smooth cerebrum model, the peak strains in the brain tissue occur at the interface with the ventricles. The time to reach the peak-strain magnitudes was higher with the smooth cerebrum model, corresponding to the time taken by the shear wave to travel from the brain surface to the ventricles. Comparison of models with cortical folds for the 22 subjects shows high variability in the magnitude of the peak strain (24%) and peak strain rates (25%). The specific gyri of the cerebral cortex where the peak strain occurred also varies between models. These results highlight the importance of accurately modeling the subject-specific cortical folds in an HDT to predict the location of injury. Our automated workflow aims to capture these anatomical details.
 
 4. Conclusions
 
@@ -43,4 +45,3 @@ This study extends our previously developed semi-automated workflow (MHSRS 2022)
 - Demonstrate an automated workflow for subject specific finite element head modeling from medical images for military TBI assessment
 - Discuss the sensitivity of inter-subject anatomical variations in TBI assessment
 - Highlight the current challenges of fully automating human digital twin generation and real time injury prediction
-

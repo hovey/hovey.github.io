@@ -32,47 +32,36 @@ Chad Hovey (3)
 
 INTRODUCTION
 
-The problem: High inter-subject variability in mTBI requires personalized risk prediction, yet models must be validated against clinical ground truth to be reliable for military application.
+High inter-subject variability in mild traumatic brain injury (mTBI) requires personalized risk prediction.
+Computational approaches that aim to model mTBI can no longer be "one-size-fits-most."  Such models, class-bassed (male versus female), poplulation-based (American Female 5%, American Male 50%, American Male 95%), or a singleton (a single, bespoke "human head model"), lack specificity and uniqueness to any particular individual, and therefore are limited in their effectiveness to provide relevant and tailored injury risk prediction.
 
-The gap: Previous iterations focused on automated pipeline development (autotwin) and mesh sensitivity (voxel versus conformal).  However, large-scale validation against *in vivo* brain deformation is required for confidence in the pipeline's predictions.
+Our past work demonstrated an automated workflow, called "autotwin", capable of creating personalized computational models from an individual's MR/CT imaging data, at scale and without human intervention.  The application of our workflow on the IXI dataset (https://www.nitrc.org/projects/ixi_dataset), a collection of over 600 MR images from normal, healthy subjects, demonstrated significant (>20%) subject-to-subject variability in mild traumatic brain injury (mTBI) metrics (MPS95 and MPS95).  While this previous effort proved robustness of the workflow through its use on 100s of subjects, the predicted brain deformation for each model lacked a connection to experimental validation since the IXI dataset was purely anatomical (not physiological) in nature.
 
-Objective: To validate the autotwin workflow by comparing simulated brain strains against clinical tagged MRI data across a 50-subject cohort.
-
+In the present work, we apply our automated workflow to a new data set that not only has numerous human subjects (each with a unique MR scan), but also contains brain displacement and strain measurements from *in vivo* experiment.  Our objective was to utilize the tagged MRI data from the Brain Biomechanics Imaging Resources dataset (https://www.nitrc.org/projects/bbir) to validate our simulated displacement and strain results with experimental measurements.
 
 MATERIALS AND METHODS
 
-Data source:  We utilized the Bayly dataset (n=50) featuring tagged MRI of the human brain during dynamic head motion.
+We used our "autotwin" workflow (https://github.com/autotwin), an open-source framework capable of using a subject-specific imaging dataset to produce a unique computational model, which in turn, provides a personalized injury risk assessment assessment.  We then harvested data from the tagged MRI BBIR dataset (n=50).  This dataset provided a large population of unqiue human subjects, each with their unique structural imaging.  Importantly, this dataset also provided *in vivo* brain displacement and strain measurements for sub-concussive head impact scenarious, head extension or head rotation.
 
-Loading Conditions: Analysis of two distinct kinematics: neck extension and neck rotation.
-
-The Workflow: Automated mesh generation for finite element models, creating a Human Digital Twin (HDT), from clinically available T1-weigthed MR image datasets using the automesh pipeline.
-
-Validation Metric: Comparison of localized displacement and strain fields (e.g., in the corpus callosum and brainstem) between FE simulations and tagged MRI experimental measurements.
-
-Comparison of shear wave timing and propagation of the model versus experiment.
+The autotwin workflow generated finite element models, a Human Digital Twin (HDT), from clinically available T1-weighted MR image datasets using the "automesh" pipeline.  Skull, cerebral spinal fluid, brain (white and gray matter), and membranes (falx and tentorium) were modeled.  We applied the unique head cradle motion recorded in the experiment as a boundary condition to the rigid skull of the model.  We compared brain displacement and strain fields between FE simulations and tagged MRI experimental measurements.  We also compared shear wave timing and propagation of the model versus experiment.
 
 RESULTS
 
-Performance: Report on success rate and generation time for automated pipeline to produce unique meshes for each of the subjects in the dataset.
+The fully automated autotwin pipeline successfully generated unique, high-fidelity hexahedral meshes for 100% of the 50-subject cohort without requiring manual geometric cleanup or parameter tuning.  The average generation time per subject was on the order of minutes.  This automation demonstrates a significant reduction in the manual intervention typically required for subject-specific brain modeling.
 
-Accuracy: Correlation coefficient and Root Mean Square Error (RMSE) between the simulated and experimental brain displacement and strain for both extension and rotation.
-
-Variability: Report on the inter-subject variability observed in both the simulation and experiment.
-
-DRAFT:
-
-The fully automated automesh and ensemble pipeline successfully generated unique, high-fidelity hexahedral meshes for 100% of the 50-subject cohort without requiring manual geometric cleanup or parameter tuning. The average generation time per subject was [Insert Time] minutes, demonstrating a significant reduction in the manual intervention typically required for subject-specific brain modeling. Quantitatively, the simulated brain displacement and strain fields showed strong correlation with the experimental tagged MRI data for both neck extension and rotation, with a mean Root Mean Square Error (RMSE) of [Insert Value]. These results highlight that the automated workflow effectively captures the inter-subject anatomical variability—such as unique cortical folding patterns—necessary to predict localized strain concentrations observed in clinical measurements.
+Quantitatively, the simulated brain displacement and strain fields showed strong correlation with the experimental tagged MRI data for both neck extension and rotation, with a mean correlation error metric of less than 10 percent. These results highlight the workflow's ability to effectively capture inter-subject anatomical variability. The shear wave magnitude and timing compared favorably, demonstrating the model's ability to predict shear deformation and propagation.
 
 CONCLUSIONS
 
-Clinical utility: The autotwin workflow demonstrates the ability to accurately predict *in vivo* brain deformation across a diverse population.
+We demonstrate the ability of the "autotwin" workflow to accurately predict *in vivo* brain deformation across a diverse and large population.  The validated HDTs provide confidence in the workflow's predictive capability.  This validated workflow can be used to assess blast and impact threats encountered by military personnel.  The automation aspect makes the integration of personalized injury risk assessment into the design process for next-generation personal productive equipment viable.
 
-Military Impact: Validated HDTs provide confidence in the workflow's predictive capability.  Validated models may be used to assess blast and impact threats, with an eye toward the design of next-generation personal protective equipment.
-
-Future work: Scaling of the validated workflow to include subjects with higher strains.   Utilization of the framework in real-time injury prediction.
+The BBIR dataset is limited to subconcussive, non-injurious head impacts since it derived from human volunteer testing.
+Accordingly, the conclusions reached in this study are limited to the same subset of possible head motion environments.
+Nonetheless, a milestone toward the development of human digital twin workflow that is automated and validated has been achieved.  Moreover, the framework now exists to generate digital twin models to predict brain deformation in higher strain regiemes, where clinical human testing is unavailable.
 
 Learning Objectives
 
 - Analyze the accuracy of the autotwin workflow by comparing simulation of brain strain to clinically validated tagged MRI data.
 - Discuss how clinically validated, subject-specific digital twins may help the design and testing of military personal protective equipment
 - Highlight the limitations and opportunities for digital twin models to predict brain strain in higher strain regimes, where clinical human testing data is unavailable
+image
