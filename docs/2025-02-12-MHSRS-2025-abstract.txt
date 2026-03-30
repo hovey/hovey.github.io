@@ -1,0 +1,58 @@
+Effect of Meshing Techniques Used in Subject-Specific Human Digital Twins for Mild Traumatic Brain Injury Risk Assessment
+
+Anu Tripathi (1)
+Michael Buche (3)
+Rika Wright Carlsen (1)
+Emma Lejeune (2)
+Chad B. Hovey (3)
+
+(1) Department of Engineering, Robert Morris University, Pittsburgh, PA
+(2) Department of Mechanical Engineering, Boston University, Boston, MA
+(3) Sandia Injury Biomechanics Laboratory (SIBL), Sandia National Laboratories, Albuquerque, NM
+
+Abstract Deadline: February 16, 2025
+
+Military Injury Biomechanics and Prevention for Military Application.
+
+Topic Area: Injury Prevention.
+
+Session Description: Abstracts should address: 1) Vehicle crashworthiness, injury trends, and injury biomechanics of mounted occupants; (2) Injury biomechanics of the head, neck, and spine during military operational tasks; (3) Injury biomechanics and tolerances for military personnel protective equipment (e.g., helmet and body armor); or (4) Mechanisms and biomechanics of injury for Service Members
+
+Breakout Session: Computational Modeling of Human Lethality, Injury, and Impairment from Blast Threats in All Environments
+
+Comprehensive Strategy and Action Plan for Warfighter Brain Health - Way Forward LOI4 (Late/Long Term Effects)
+
+Abstract Title: Limit of 200 characters (includes spacing)
+
+Abstract length: Limit of 2,500 characters (includes spacing)
+
+Abstract Disclaimer: Limit of 700 characters (includes spacing)
+
+Learning Objectives: Three (3) are required. These should answer the question - What do you expect the attendee to be able to do at the end of the session? Each learning objective should start with an action verb (e.g., Describe, Analyze, Discuss, etc). Each learning objective has a limit of 200 characters (includes spacing).
+
+ABSTRACT
+
+Introduction
+
+The large inter-subject variability in mild traumatic brain injury (mTBI) calls for personalized injury risk prediction. Therefore, mTBI computational models must capture the subject-specific factors affecting mTBI, such as subject-specific brain anatomy. The existing tools for generating subject-specific models require extensive manual intervention and are time-consuming. We aim to develop an automated workflow for subject-specific finite element (FE) modeling for personalized mTBI risk assessment.
+
+Materials and Methods
+
+We begin with an ensemble of multiple existing tools (e.g., FreeSurfer, FSL) for segmenting medical images of the human head to provide the isosurfaces that separate the skull, the cerebrospinal fluid (CSF) and the brain. These isosurfaces are the input to the next step, meshing, which discretizes the volume enclosed by the isosurfaces into solid hexahedral elements. The gold standard conformal hexahedral meshes (smooth interfaces) are difficult to generate and are not scalable for anatomically complex brain models, such as models with cortical folds. Therefore, an alternate voxel meshing approach was also implemented, which is scalable to the population scale. This study aims to demonstrate the effect of these meshing techniques on mTBI risk assessment.
+
+We perform a mesh convergence analysis for the conformal and voxel meshes for a simplified spherical skull enclosing a thin uniform CSF layer around the brain tissue.  The converged mesh sizes for both mesh types will be used to model a fully detailed head with cortical folds to understand the effect of mesh types in predicting mTBI.  We simulate an mTBI causing event through a rotational acceleration impulse of 8 krad/s2 over ~8 ms duration.
+
+Results
+
+The conformal mesh experienced higher deformation localization in the fluid layer which increased asymptotically with mesh refinement. This resulted in a delay in the brain strain.  Convergence was achieved at a mesh size of 1 mm, with the peak strain of 0.58 occurring at ~40 ms. The rough interfaces in the voxel mesh provided higher stiffness, resulting in lower strain localization in the CSF. However, this strain localization increased with mesh refinement and convergence was seen at 0.8 mm, with peak strains of 0.60 occurring at ~38 ms. 
+
+Conclusions
+
+Our results indicate that the voxel mesh at higher refinement can capture the peak strain behavior and can be used in our personalized modeling workflow for mTBI risk assessment.
+
+Learning Objectives
+
+- Demonstrate an automated workflow for personalized finite element head modeling from medical images for military mTBI assessment
+- Highlight the current challenges of fully automating human head digital twin generation for accurate mTBI assessment
+- Discuss the effect of finite element model meshing techniques on the mTBI risk 
+
