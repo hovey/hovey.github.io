@@ -63,4 +63,4 @@ LEARNING OBJECTIVES
 - Analyze the accuracy of the autotwin workflow by comparing simulation of brain strain to clinically validated tagged MRI data.
 - Discuss how clinically validated, subject-specific digital twins may help the design and testing of military personal protective equipment
 - Highlight the limitations and opportunities for digital twin models to predict brain strain in higher strain regimes, where clinical human testing data is unavailable
-image
+
