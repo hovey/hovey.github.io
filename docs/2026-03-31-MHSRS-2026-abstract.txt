@@ -20,9 +20,9 @@ Disclaimer: The views and opinions expressed in this abstract are those of the a
 
 Title: Towards a Fully Automated Workflow for Subject-Specific Human Digital Twins with Clinical Brain Strain Validation
 
-Anu Tripathi (1)
 Evangelos Apostolakis (2)
 Michael Buche (3)
+Anu Tripathi (1)
 Anastasia Tzoumaka (1)
 Rika Wright Carlsen (1)
 Emma Lejeune (2)
